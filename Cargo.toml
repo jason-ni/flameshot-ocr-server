@@ -1,0 +1,21 @@
+[package]
+name = "flameshot-ocr-server"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+axum = "0.7.4"
+clap = { version = "4.5.1", features = ["cargo"] }
+http = "1.0.0"
+tesseract = "0.15.1"
+thiserror = "1.0"
+tokio = {version = "^1.25.0", features = ["full"] }
+llama_cpp_rs = {path = "../rust-llama.cpp", features=["cuda"]}
+serde = { version = "1.0.202" }
+serde_json = "1.0.117"
+
+[features]
+cuda = ["llama_cpp_rs/cuda"]
